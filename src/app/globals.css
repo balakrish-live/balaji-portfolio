@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #ff014f;
+  --color-primary-dark: #d9003f;
+  --color-heading: #181c32;
+  --color-body: #65676b;
+  --color-soft: #f0f2f5;
+  --color-line: #e4e6ea;
+  --font-heading: var(--font-rajdhani);
+  --font-sans: var(--font-rubik);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-body);
+  font-family: var(--font-sans), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), sans-serif;
+  color: var(--color-heading);
+}
+
+/* Soft neumorphic card used across sections */
+.card {
+  background: linear-gradient(145deg, #ffffff, #f4f5f8);
+  box-shadow: 8px 8px 24px #d9dce3, -8px -8px 24px #ffffff;
+  border-radius: 1rem;
+}
+
+.blink-caret {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float,
+  .blink-caret {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
