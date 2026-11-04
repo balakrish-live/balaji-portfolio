@@ -4,9 +4,9 @@ import SectionTitle from "@/components/SectionTitle";
 import { projects } from "@/data/portfolio";
 
 const gradients = [
-  "from-[#5237f9] to-primary",
-  "from-[#ED145B] to-[#4A11EB]",
-  "from-[#E42032] to-[#1273EB]",
+  "from-accent to-primary",
+  "from-[#003574] to-[#0284c7]",
+  "from-primary to-[#06b6d4]",
   "from-[#03041c] to-[#0612b3]",
 ];
 
@@ -30,8 +30,8 @@ function ProjectLink({
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-soft py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="projects" className="bg-soft/60 py-24">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <SectionTitle eyebrow="Latest work" title="Featured Projects" />
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((project, i) => (
@@ -61,7 +61,27 @@ export default function Projects() {
                       />
                     )}
                   </h3>
+                  {project.role && (
+                    <p className="mb-3 text-sm font-semibold text-heading">
+                      {project.role}
+                    </p>
+                  )}
                   <p className="mb-5 leading-relaxed">{project.description}</p>
+                  {project.contributions && (
+                    <>
+                      <p className="mb-2 font-heading text-lg font-bold text-heading">
+                        My contributions
+                      </p>
+                      <ul className="mb-5 space-y-2">
+                        {project.contributions.map((item) => (
+                          <li key={item} className="flex gap-3 leading-relaxed">
+                            <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span

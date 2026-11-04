@@ -4,7 +4,7 @@ import { navLinks, profile } from "@/data/portfolio";
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-soft">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-12 text-center sm:px-6">
+      <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-4 py-12 text-center sm:px-6 lg:px-10">
         <a href="#home" className="font-heading text-3xl font-bold text-heading">
           {profile.shortName}
           <span className="text-primary">.</span>

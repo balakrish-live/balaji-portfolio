@@ -38,7 +38,7 @@ export default function Header() {
         scrolled ? "bg-white/90 shadow-md backdrop-blur" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+      <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
         <a
           href="#home"
           className="font-heading text-3xl font-bold text-heading"

@@ -43,7 +43,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <SectionTitle eyebrow="Get in touch" title="Let's Work Together" />
         <div className="grid gap-8 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">

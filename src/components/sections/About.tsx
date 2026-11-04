@@ -5,23 +5,31 @@ import { profile, services, stats } from "@/data/portfolio";
 
 export default function About() {
   return (
-    <section id="about" className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <Reveal className="mx-auto mb-16 max-w-3xl text-center">
+    <section id="about" className="bg-white py-24">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
+        <Reveal className="mx-auto mb-16 max-w-4xl text-center">
           <p className="mb-3 text-sm font-medium tracking-[0.2em] text-primary uppercase">
             About me
           </p>
           <h2 className="mb-6 text-4xl font-bold sm:text-5xl">
             {profile.title} based in {profile.location.split(",")[0]}
           </h2>
-          <p className="text-lg leading-relaxed">{profile.about}</p>
+          <div className="space-y-4 text-lg leading-relaxed">
+            {profile.about.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </Reveal>
 
         <div className="mb-24 grid grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 100}>
-              <div className="card p-8 text-center">
-                <p className="font-heading text-5xl font-bold text-primary">
+              <div className="card flex h-full flex-col justify-center p-8 text-center">
+                <p
+                  className={`font-heading font-bold text-primary ${
+                    stat.value.length > 4 ? "text-2xl sm:text-3xl" : "text-5xl"
+                  }`}
+                >
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm font-medium tracking-wide uppercase">

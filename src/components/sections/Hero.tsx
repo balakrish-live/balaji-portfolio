@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroCode from "@/components/HeroCode";
 import Icon from "@/components/Icon";
 import TypedRoles from "@/components/TypedRoles";
 import { profile } from "@/data/portfolio";
@@ -7,10 +8,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-b from-soft to-white pt-32 pb-20 lg:pt-40 lg:pb-28"
+      className="relative overflow-hidden bg-gradient-to-b from-soft/60 to-transparent pt-32 pb-20 lg:pt-40 lg:pb-28"
     >
       <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-      <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2">
+      <HeroCode />
+      <div className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-14 px-4 sm:px-6 lg:px-10 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
           <p className="mb-4 text-sm font-medium tracking-[0.2em] text-primary uppercase">
             Welcome to my world
@@ -62,7 +64,7 @@ export default function Hero() {
 
         <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
           <div className="animate-float relative">
-            <div className="absolute -inset-4 -z-10 rotate-6 rounded-[2rem] bg-gradient-to-tr from-primary to-[#5237f9] opacity-90" />
+            <div className="absolute -inset-4 -z-10 rotate-6 rounded-[2rem] bg-gradient-to-tr from-primary to-accent opacity-90" />
             <div className="card overflow-hidden rounded-[2rem] p-3">
               <Image
                 src={profile.photo}

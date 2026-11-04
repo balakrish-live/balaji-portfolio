@@ -1,3 +1,4 @@
+import CodeBackground from "@/components/CodeBackground";
 import Header from "@/components/Header";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
@@ -10,6 +11,7 @@ import Skills from "@/components/sections/Skills";
 export default function Home() {
   return (
     <>
+      <CodeBackground />
       <Header />
       <main>
         <Hero />

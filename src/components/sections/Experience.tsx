@@ -31,6 +31,24 @@ function Timeline({ title, items }: { title: string; items: TimelineEntry[] }) {
                   ))}
                 </ul>
               )}
+              {item.projects?.map((project) => (
+                <div key={project.name} className="mt-6 border-t border-line pt-5">
+                  <h5 className="font-heading text-lg font-bold text-heading">
+                    {project.name}
+                  </h5>
+                  {project.stack && (
+                    <p className="mt-1 text-sm text-primary">{project.stack}</p>
+                  )}
+                  <ul className="mt-3 space-y-2">
+                    {project.points.map((point) => (
+                      <li key={point} className="flex gap-3 leading-relaxed">
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </Reveal>
         ))}
@@ -42,7 +60,7 @@ function Timeline({ title, items }: { title: string; items: TimelineEntry[] }) {
 export default function Experience() {
   return (
     <section id="experience" className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <SectionTitle eyebrow="My journey" title="Experience & Education" />
         <div className="grid gap-14 lg:grid-cols-2">
           <Timeline title="Experience" items={experience} />

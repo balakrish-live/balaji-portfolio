@@ -15,7 +15,7 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name} | ${profile.title}`,
+  title: `${profile.name} | ${profile.seoTitle}`,
   description: profile.summary,
 };
 
