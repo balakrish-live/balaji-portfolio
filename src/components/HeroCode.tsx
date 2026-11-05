@@ -68,6 +68,7 @@ export default function HeroCode() {
                 {length === 0 && " "}
               </span>
             );
+            
           })}
         </pre>
       ))}
