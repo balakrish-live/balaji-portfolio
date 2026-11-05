@@ -17,7 +17,7 @@ export default function Hero() {
           <p className="mb-4 text-sm font-medium tracking-[0.2em] text-primary uppercase">
             Welcome to my world
           </p>
-          <h1 className="text-4xl leading-tight font-bold sm:text-6xl">
+          <h1 className="text-3xl leading-tight font-bold sm:text-5xl">
             Hi, I&apos;m <span className="whitespace-nowrap text-primary">{profile.name}</span>
             <br />a <TypedRoles roles={profile.roles} />
           </h1>
