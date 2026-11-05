@@ -38,6 +38,7 @@ export async function POST(req: Request) {
     subject: `Portfolio enquiry from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
   });
+  
 
   if (error) {
     console.error("Resend error:", error);
